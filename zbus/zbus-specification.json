@@ -1,0 +1,262 @@
+{
+    "version": "20230720.5",
+    "nodes": [
+        {
+            "name": "Channel",
+            "type": "Channel",
+            "category": "Channel",
+            "icon": "mailbox-open-up.svg",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "default": ""
+                },
+                {
+                    "name": "message",
+                    "type": "text",
+                    "default": ""
+                }
+            ],
+            "interfaces": [
+                {
+                    "name": "pub",
+                    "type": "Publish",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "notify",
+                    "type": "Notify",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "sub",
+                    "type": "Subscribe",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "read",
+                    "type": "Read",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                }
+            ]
+        },
+        {
+            "name": "Subscriber",
+            "type": "Thread",
+            "category": "Observer",
+            "icon": "email-search.svg",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "default": ""
+                },
+                {
+                    "name": "enable",
+                    "type": "checkbox",
+                    "default": true
+                },
+                {
+                    "name": "queue size",
+                    "type": "integer",
+                    "default": 4
+                }
+            ],
+            "interfaces": [
+                {
+                    "name": "pub",
+                    "type": "Publish",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "notify",
+                    "type": "Notify",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "sub",
+                    "type": "Subscribe",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "read",
+                    "type": "Read",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                }
+            ]
+        },
+        {
+            "name": "Plain Thread",
+            "type": "Thread",
+            "category": "Thread",
+            "icon": "reload.svg",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "default": ""
+                }
+            ],
+            "interfaces": [
+                {
+                    "name": "pub",
+                    "type": "Publish",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "notify",
+                    "type": "Notify",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "read",
+                    "type": "Read",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                }
+            ]
+        },
+        {
+            "name": "Listener",
+            "type": "Callback",
+            "category": "Observer",
+            "icon": "ear-hearing.svg",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "default": ""
+                },
+                {
+                    "name": "enable",
+                    "type": "checkbox",
+                    "default": true
+                }
+            ],
+            "interfaces": [
+                {
+                    "name": "pub",
+                    "type": "Publish",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "notify",
+                    "type": "Notify",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "sub",
+                    "type": "Subscribe",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                }
+            ]
+        },
+        {
+            "name": "EventSource",
+            "type": "EventSource",
+            "category": "Hardware",
+            "icon": "chip.svg",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "default": ""
+                },
+                {
+                    "name": "source",
+                    "type": "select",
+                    "values": [
+                        "RTC",
+                        "Timer",
+                        "Input Key",
+                        "Driver"
+                    ],
+                    "default": "Input Key"
+                }
+            ],
+            "interfaces": [
+                {
+                    "name": "pub",
+                    "type": "Publish",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "notify",
+                    "type": "Notify",
+                    "direction": "output",
+                    "maxConnectionsCount": -1
+                },
+                {
+                    "name": "read",
+                    "type": "Read",
+                    "direction": "input",
+                    "maxConnectionsCount": -1
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "interfaces": {
+            "Read": {
+                "interfaceConnectionPattern": "dashed",
+                "interfaceConnectionColor": "#AAAAAA"
+            }
+        },
+        "connectionStyle": "curved",
+        "twoColumn": true,
+        "layers": [
+            {
+                "name": "Channels",
+                "nodeTypes": [
+                    "Channel"
+                ]
+            },
+            {
+                "name": "Observers",
+                "nodeTypes": [
+                    "Thread",
+                    "Callback"
+                ]
+            },
+            {
+                "name": "Publish",
+                "nodeInterfaces": [
+                    "Publish"
+                ]
+            },
+            {
+                "name": "Read",
+                "nodeInterfaces": [
+                    "Read"
+                ]
+            },
+            {
+                "name": "Subscribe",
+                "nodeInterfaces": [
+                    "Subscribe"
+                ]
+            },
+            {
+                "name": "Notify",
+                "nodeInterfaces": [
+                    "Notify"
+                ]
+            }
+        ]
+    }
+}

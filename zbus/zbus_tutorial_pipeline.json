@@ -1,0 +1,551 @@
+{
+    "graph": {
+        "id": "8790310c-0a0a-434c-9bae-876602c8a919",
+        "nodes": [
+            {
+                "type": "EventSource",
+                "id": "d216742f-6de3-404f-968b-0e78b99e1d33",
+                "position": {
+                    "x": 433,
+                    "y": 363
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "read",
+                        "id": "7017dab2-faf3-401d-af07-4929e8cb0349",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "notify",
+                        "id": "ab0558d2-1e16-424c-a63f-40d4eebc7451",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "36215f6b-cc4a-4771-b04e-20cb386faf6f",
+                        "value": "Heartbeat Timer"
+                    },
+                    {
+                        "name": "source",
+                        "id": "bfcd3c7a-35b7-4332-856c-b9b23fe7d084",
+                        "value": "Timer"
+                    }
+                ],
+                "name": "EventSource"
+            },
+            {
+                "type": "Channel",
+                "id": "29534476-f77e-4c08-81e9-754ce58d17e7",
+                "position": {
+                    "x": 803,
+                    "y": 372
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "notify",
+                        "id": "27403463-0e79-4984-b591-79ae4dc0f2b5",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "sub",
+                        "id": "751c89db-4d93-4b41-a664-f29a717bdd8e",
+                        "direction": "output",
+                        "side": "right"
+                    },
+                    {
+                        "name": "read",
+                        "id": "a51fce6c-11d5-4494-8cc9-732adf26b361",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "93c48768-6799-4786-ab72-e3dc17f819d5",
+                        "value": "Start Trigger"
+                    },
+                    {
+                        "name": "message",
+                        "id": "dd788e5f-4052-4d18-a53c-cf311ce40b16",
+                        "value": "bool"
+                    }
+                ],
+                "name": "Channel"
+            },
+            {
+                "type": "Subscriber",
+                "id": "d56fd712-3cbd-4bb8-aa75-b73b899a945c",
+                "position": {
+                    "x": 1172,
+                    "y": 384
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "sub",
+                        "id": "252c4101-f9f6-40c6-8b3b-314c5f051c88",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "read",
+                        "id": "e4406b51-d38c-41da-88a9-0f9d8465460d",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "pub",
+                        "id": "0fb10ced-7d31-45c9-a0c1-c16e074b360b",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "7f9fdaf2-5dc9-4b82-a6c3-f3b3df15cb6c",
+                        "value": "Sensor"
+                    },
+                    {
+                        "name": "enable",
+                        "id": "5d03eb92-3412-4f50-90e6-c6b6afde7780",
+                        "value": true
+                    },
+                    {
+                        "name": "queue size",
+                        "id": "02af54d3-3664-46ba-91fd-d0265861b182",
+                        "value": 4
+                    }
+                ],
+                "name": "Subscriber"
+            },
+            {
+                "type": "Channel",
+                "id": "d57a4c70-ea43-42da-9147-d1ac1bca3efb",
+                "position": {
+                    "x": 1559,
+                    "y": 363
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "pub",
+                        "id": "7effee85-72de-48ac-a80d-2ecf0e218542",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "sub",
+                        "id": "d87756bc-0e20-46fb-aa82-e8c7fbf330d4",
+                        "direction": "output",
+                        "side": "right"
+                    },
+                    {
+                        "name": "read",
+                        "id": "c2debdc3-55f9-4d14-8e69-0233a59f8087",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "fc6cd407-e1a3-421d-b0a7-47748957ae97",
+                        "value": "Sensor Data"
+                    },
+                    {
+                        "name": "message",
+                        "id": "8d4e8e44-b97b-4449-b8fd-8421b6e811f1",
+                        "value": "struct sensor_data_msg"
+                    }
+                ],
+                "name": "Channel"
+            },
+            {
+                "type": "Listener",
+                "id": "f599ecc8-665a-4a2f-a716-ba95a54ba1c9",
+                "position": {
+                    "x": 3337,
+                    "y": 631
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "sub",
+                        "id": "05531a90-3b58-4e6b-b599-c6e5a65d10d9",
+                        "direction": "input",
+                        "side": "left"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "5fc45552-49bc-408d-b642-124be042572d",
+                        "value": "Mock"
+                    },
+                    {
+                        "name": "enable",
+                        "id": "28f548d3-06de-4d50-9116-90bb005d08f6",
+                        "value": true
+                    }
+                ],
+                "name": "Listener"
+            },
+            {
+                "type": "Subscriber",
+                "id": "cfea3a5e-4552-4fdb-8dcd-982a8f0bd19d",
+                "position": {
+                    "x": 1948,
+                    "y": 334
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "sub",
+                        "id": "48728ead-c2ee-4f79-a975-e533347bb177",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "read",
+                        "id": "1ccc2712-81c3-4aa6-b86f-c3ca76093fbc",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "pub",
+                        "id": "67e3ffb2-56ee-4824-a4e1-d511326e64cc",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "9c1955a4-a693-4c22-b610-ab2169406d70",
+                        "value": "Core"
+                    },
+                    {
+                        "name": "enable",
+                        "id": "52d2e247-1ad1-44d6-95a2-fb23b96edb62",
+                        "value": true
+                    },
+                    {
+                        "name": "queue size",
+                        "id": "93174d4c-d36d-4a7f-adc5-5dd15727299d",
+                        "value": 4
+                    }
+                ],
+                "name": "Subscriber"
+            },
+            {
+                "type": "Channel",
+                "id": "29d65fb8-84f9-40d4-aa92-e32f3a171dc0",
+                "position": {
+                    "x": 2349,
+                    "y": 364
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "pub",
+                        "id": "2f6f97c9-79a1-4f8f-a792-0d7018289227",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "sub",
+                        "id": "f7ae5569-32ec-423b-b5ff-3dad81e87369",
+                        "direction": "output",
+                        "side": "right"
+                    },
+                    {
+                        "name": "read",
+                        "id": "cf3da7de-0fe7-4dc7-bd67-67fd9614cf30",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "cc83a376-2d0a-4431-8d58-d8774f797f88",
+                        "value": "Payload"
+                    },
+                    {
+                        "name": "message",
+                        "id": "5f8e8ff0-9af3-41a5-8faf-94bb10100512",
+                        "value": "struct payload_msg"
+                    }
+                ],
+                "name": "Channel"
+            },
+            {
+                "type": "Subscriber",
+                "id": "5bf68897-4bd8-4fc2-8466-4927bd4d91b2",
+                "position": {
+                    "x": 2769,
+                    "y": 349
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "sub",
+                        "id": "5a1235d0-901b-4d40-8e52-1c6ab247e036",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "read",
+                        "id": "fbd339b1-c57c-47a7-888d-4d9702b37f38",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "pub",
+                        "id": "5a689c09-78e0-428d-8aaa-655c6fb8621a",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "b449dd86-035a-4e60-9cd6-a99c73250d58",
+                        "value": "LoRa"
+                    },
+                    {
+                        "name": "enable",
+                        "id": "3cc9fcd2-4b74-4bf7-a621-47256e65d1c8",
+                        "value": true
+                    },
+                    {
+                        "name": "queue size",
+                        "id": "210df65e-e822-48cf-b64b-8512a59a76e5",
+                        "value": 4
+                    }
+                ],
+                "name": "Subscriber"
+            },
+            {
+                "type": "Channel",
+                "id": "b5db1e7a-f3e5-4099-8a65-042bffd704ec",
+                "position": {
+                    "x": 3149,
+                    "y": 121
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "pub",
+                        "id": "cc9922f8-f38a-42be-8c9f-b72577389ccf",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "sub",
+                        "id": "49c528c7-2977-4add-baf8-920d0be744ec",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "b9c253cd-3c56-42a7-96cb-4a1fbd8cda24",
+                        "value": "Transmission Done"
+                    },
+                    {
+                        "name": "message",
+                        "id": "af856973-c043-482b-b785-989415a1774f",
+                        "value": "bool"
+                    }
+                ],
+                "name": "Channel"
+            },
+            {
+                "type": "Channel",
+                "id": "228e1fd5-b3de-4c3b-aba0-ef92293f3da3",
+                "position": {
+                    "x": 65,
+                    "y": 325
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "pub",
+                        "id": "96166b86-6f46-4bd4-9e6e-da2f0cd925f2",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "read",
+                        "id": "326066e2-b876-4831-83ac-9d889dd880a2",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "b80891d8-6b4d-4fb8-881e-c4035b09c69e",
+                        "value": "App Info"
+                    },
+                    {
+                        "name": "message",
+                        "id": "acdb810d-de77-4965-821f-e883c6904caa",
+                        "value": ""
+                    }
+                ],
+                "name": "Channel"
+            },
+            {
+                "type": "Plain Thread",
+                "id": "4c833e28-496f-4964-8187-c82ed1a429b3",
+                "position": {
+                    "x": 430,
+                    "y": 21
+                },
+                "width": 200,
+                "twoColumn": true,
+                "interfaces": [
+                    {
+                        "name": "read",
+                        "id": "d6f1ac16-f8ee-41d5-b9a6-4fae0237f296",
+                        "direction": "input",
+                        "side": "left"
+                    },
+                    {
+                        "name": "pub",
+                        "id": "81ad3780-1f78-474c-84c0-ff2f84324c40",
+                        "direction": "output",
+                        "side": "right"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "name",
+                        "id": "4c4ea023-8efd-47c4-a0e9-eae2433a704a",
+                        "value": "main"
+                    }
+                ],
+                "name": "Plain Thread"
+            }
+        ],
+        "connections": [
+            {
+                "id": "5e68f7a5-7491-4786-a968-92843920b868",
+                "from": "751c89db-4d93-4b41-a664-f29a717bdd8e",
+                "to": "252c4101-f9f6-40c6-8b3b-314c5f051c88"
+            },
+            {
+                "id": "8711ff3d-ae50-4876-a4d1-e8f684b5bd45",
+                "from": "0fb10ced-7d31-45c9-a0c1-c16e074b360b",
+                "to": "7effee85-72de-48ac-a80d-2ecf0e218542"
+            },
+            {
+                "id": "d46bbcdb-f558-4cd9-8b71-694fd3a52c45",
+                "from": "d87756bc-0e20-46fb-aa82-e8c7fbf330d4",
+                "to": "05531a90-3b58-4e6b-b599-c6e5a65d10d9"
+            },
+            {
+                "id": "7349da40-9ed8-463a-a148-458c313d81e7",
+                "from": "d87756bc-0e20-46fb-aa82-e8c7fbf330d4",
+                "to": "48728ead-c2ee-4f79-a975-e533347bb177"
+            },
+            {
+                "id": "99ead7db-1e73-4625-a2a2-a85295df09f8",
+                "from": "67e3ffb2-56ee-4824-a4e1-d511326e64cc",
+                "to": "2f6f97c9-79a1-4f8f-a792-0d7018289227"
+            },
+            {
+                "id": "93566210-14a4-45cb-8492-e63c337543f3",
+                "from": "f7ae5569-32ec-423b-b5ff-3dad81e87369",
+                "to": "05531a90-3b58-4e6b-b599-c6e5a65d10d9"
+            },
+            {
+                "id": "0355980e-c137-44ee-8ef7-9f32a57c0bb0",
+                "from": "f7ae5569-32ec-423b-b5ff-3dad81e87369",
+                "to": "5a1235d0-901b-4d40-8e52-1c6ab247e036"
+            },
+            {
+                "id": "fb1ac70e-537a-462c-b9ba-5b6a3d7a041f",
+                "from": "5a689c09-78e0-428d-8aaa-655c6fb8621a",
+                "to": "cc9922f8-f38a-42be-8c9f-b72577389ccf"
+            },
+            {
+                "id": "161447c6-0e4e-4755-ab1f-3852f3ad5b41",
+                "from": "49c528c7-2977-4add-baf8-920d0be744ec",
+                "to": "05531a90-3b58-4e6b-b599-c6e5a65d10d9"
+            },
+            {
+                "id": "997e3925-d704-4527-a325-3d407af78f1a",
+                "from": "49c528c7-2977-4add-baf8-920d0be744ec",
+                "to": "48728ead-c2ee-4f79-a975-e533347bb177"
+            },
+            {
+                "id": "a4247cce-8878-4dbc-8ff1-46b750894159",
+                "from": "ab0558d2-1e16-424c-a63f-40d4eebc7451",
+                "to": "27403463-0e79-4984-b591-79ae4dc0f2b5"
+            },
+            {
+                "id": "9dfe4b43-5068-4a34-9bb6-55ee8e2de995",
+                "from": "326066e2-b876-4831-83ac-9d889dd880a2",
+                "to": "7017dab2-faf3-401d-af07-4929e8cb0349"
+            },
+            {
+                "id": "a1e16da9-dfe8-40f7-b3cd-4eb7eeca9bbe",
+                "from": "326066e2-b876-4831-83ac-9d889dd880a2",
+                "to": "d6f1ac16-f8ee-41d5-b9a6-4fae0237f296"
+            },
+            {
+                "id": "6e840bae-efee-4d7f-9122-9f221640221c",
+                "from": "81ad3780-1f78-474c-84c0-ff2f84324c40",
+                "to": "96166b86-6f46-4bd4-9e6e-da2f0cd925f2"
+            },
+            {
+                "id": "9181460a-1640-4eb3-bfd0-af4b0bf4b819",
+                "from": "a51fce6c-11d5-4494-8cc9-732adf26b361",
+                "to": "e4406b51-d38c-41da-88a9-0f9d8465460d"
+            },
+            {
+                "id": "0dd9ca12-1cf2-458f-914a-1fd8a4766c2c",
+                "from": "c2debdc3-55f9-4d14-8e69-0233a59f8087",
+                "to": "1ccc2712-81c3-4aa6-b86f-c3ca76093fbc"
+            },
+            {
+                "id": "0837315a-4cc5-42d9-b7cb-25fc4529b5fb",
+                "from": "cf3da7de-0fe7-4dc7-bd67-67fd9614cf30",
+                "to": "fbd339b1-c57c-47a7-888d-4d9702b37f38"
+            }
+        ],
+        "panning": {
+            "x": 199,
+            "y": -30
+        },
+        "scaling": 0.6648326359915009
+    },
+    "graphTemplateInstances": [],
+    "version": "20230720.5",
+    "metadata": {
+        "randomizedOffset": true
+    }
+}
